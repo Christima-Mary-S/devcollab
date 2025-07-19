@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.10.0",
+    "@monaco-editor/react": "^4.7.0",
     "mongodb": "^6.17.0",
     "mongoose": "^8.16.4",
     "next": "15.3.5",

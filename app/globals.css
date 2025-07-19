@@ -112,4 +112,7 @@ body {
   .skew-15 {
     transform: skewY(-15deg);
   }
+  .editor-container {
+    height: calc(100vh - 128px);
+  }
 }

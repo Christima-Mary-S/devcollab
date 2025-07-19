@@ -1,28 +1,20 @@
 "use client";
 
-import { useSession } from "next-auth/react";
-import { useRouter, useParams } from "next/navigation";
-import { useEffect } from "react";
+import CodeEditor from "@/components/ui/Editor";
+import { useState } from "react";
 
 export default function RoomPage() {
-  const { data: session, status } = useSession();
-  const router = useRouter();
-  const { id } = useParams()! as { id: string };
+  // ...session guard logic...
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.replace("/api/auth/signin");
-    }
-  }, [status, router]);
-
-  if (status === "loading") {
-    return <p>Loading session…</p>;
-  }
+  const [code, setCode] = useState<string>("// Start coding...");
 
   return (
-    <div>
-      <h1 className="title">Room: {id}</h1>
-      {/* TODO: embed Editor */}
+    <div className="editor-container">
+      <CodeEditor
+        value={code}
+        language="javascript"
+        onChange={(val) => setCode(val)}
+      />
     </div>
   );
 }
