@@ -113,6 +113,6 @@ body {
     transform: skewY(-15deg);
   }
   .editor-container {
-    height: calc(100vh - 128px); /* adjust for navbar & padding */
+    height: calc(100vh - 128px);
   }
 }
