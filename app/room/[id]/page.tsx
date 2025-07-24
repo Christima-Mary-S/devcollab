@@ -3,8 +3,12 @@
 import CodeEditor from "@/components/ui/CodeEditor";
 import RunTerminal from "@/components/ui/RunTerminal";
 import { useState } from "react";
+import { useParams } from "next/navigation";
 
 export default function RoomPage() {
+  const params = useParams();
+  const roomId = params.id as string;
+
   // … session guard …
 
   const [code, setCode] = useState<string>("console.log('Hello World');");
@@ -32,7 +36,12 @@ export default function RoomPage() {
 
       {/* Editor */}
       <div className="editor-container border rounded-lg overflow-hidden h-[60vh]">
-        <CodeEditor value={code} language={language} onChange={setCode} />
+        <CodeEditor
+          roomId={roomId}
+          value={code}
+          language={language}
+          onChange={setCode}
+        />
       </div>
 
       {/* Run Terminal */}
