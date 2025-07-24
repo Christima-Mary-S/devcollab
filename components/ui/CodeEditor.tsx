@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import Editor, { OnChange, OnMount } from "@monaco-editor/react";
+import dynamic from "next/dynamic";
+import type { OnChange, OnMount } from "@monaco-editor/react";
+const Editor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 
 interface CodeEditorProps {
   value: string;

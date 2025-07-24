@@ -4,7 +4,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import RunTerminal from "@/components/ui/RunTerminal";
+import RunTerminal from "../components/ui/RunTerminal";
 
 describe("RunTerminal", () => {
   it("runs JS code and displays console.log output", async () => {
